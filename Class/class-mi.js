@@ -6,7 +6,7 @@ window.inherits = function( Child, Parent ) {
 	F.prototype = Parent.prototype;
     Child.prototype = new F;
     Child.prototype.constructor = Child;
-	for( var m in prototype ) if( prototype.hasOwnProperty( m ) ){
+	for( var m in prototype ) {
 		Child.prototype[ m ] = prototype[ m ];
 	};
 };
