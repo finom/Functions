@@ -1,5 +1,5 @@
 "use strict";
-window.inherit = function( Child, Parent ) {
+window.inherits = function( Child, Parent ) {
 	var prototype = Child.prototype,
 		F = function() {};
 	F.prototype = Parent.prototype;
@@ -10,39 +10,21 @@ window.inherit = function( Child, Parent ) {
 	};
 };
 
-window.Class = function( superConstructors, Constructor, prototype ) {
-	if( arguments.length === 2 ) {
+window.Class = function( superConstructor, Constructor, prototype ) {
+	/*if( !prototype ) {
 		if( typeof Constructor === 'object' ) {
 			prototype = Constructor;
-			Constructor = superConstructors;
-			superConstructors = [];
+			Constructor = superConstructor;
+			superConstructor = function() {};
 		} else {
 			prototype = {};
-		}
-	} else if( arguments.length === 1 ) {
-		if( typeof superConstructors === 'object' ) {
-			prototype = superConstructors;
-			Constructor = prototype.constructor;
-			superConstructors = [];
-		} else {
-			prototype = {};
-			Constructor = superConstructors;
-			superConstructors = [];
 		}
 	}
 	
-	if( typeof superConstructors !== 'object' ) {
-		superConstructors = [ superConstructors ];
-	}
-
+	
+	
 	prototype.constructor = Constructor;
-	prototype.superConstructors = superConstructors;
-	
 	Constructor.prototype = prototype;
 	
-	for( var i = 0; i < superConstructors.length; i++ ) {
-		inherits( Constructor, superConstructors[ i ] );
-	}
-	
-	return Constructor;
+	inherits( Constructor, superConstructor );*/
 };
