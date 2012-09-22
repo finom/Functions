@@ -30,7 +30,7 @@ window.Class = function( superConstructors, Constructor, prototype ) {
 			prototype = superConstructors;
 			Constructor = prototype.constructor !== Object 
 				? prototype.constructor 
-				: function Constructor() {};
+				: function() {};
 			superConstructors = [];
 		} else {
 			prototype = {};

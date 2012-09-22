@@ -25,7 +25,7 @@ window.Class = function( superConstructor, Constructor, prototype ) {
 			prototype = superConstructor;
 			Constructor = prototype.constructor !== Object 
 				? prototype.constructor 
-				: function () {};
+				: function() {};
 			superConstructor = null;
 		} else {
 			prototype = {};

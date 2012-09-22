@@ -1,1 +1,0 @@
-This function will be ready soon.
