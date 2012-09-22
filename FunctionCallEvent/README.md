@@ -6,7 +6,7 @@ Sometimes libs don't contain some functionality that you need. With Function.add
 For example Twitter Bootstrap Typeahead plugin doesn't include any event that runs before and after autocomplete list is shown. You should make a shitcode to handle event when user chooses one item from the list.
 
 The solution is so:
-'''JavaScript
+```JavaScript
 var typeaheadPrototype = $.fn.typeahead.Constructor.prototype;
 typeaheadPrototype.show = fcd.utils.addCallListener( typeaheadPrototype.show, {
 	before: function( props ) {
@@ -22,4 +22,4 @@ typeaheadPrototype.select = fcd.utils.addCallListener( typeaheadPrototype.select
 		props.self.$element.trigger({ type: 'typeaheadselect', typeahead: props.self });
 	}
 });
-'''
+```
