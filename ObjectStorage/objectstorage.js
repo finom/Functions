@@ -2,11 +2,8 @@ var ObjectStorage = function ObjectStorage( name, duration ) {
     var self,
         name = name || '_objectStorage',
         defaultDuration = 5000;
-        
-    // дабы не плодить кучу экземпл€ров, использующих один и тот же ключ хранилища, 
-    // просто возвращаем единственный с заданным именем,
-    // мен€€ только duration (если имеетс€)
-    if ( ObjectStorage.instances[ name ] ) {
+
+	if ( ObjectStorage.instances[ name ] ) {
         self = ObjectStorage.instances[ name ];
         self.duration = duration || self.duration;
     } else {
@@ -51,7 +48,6 @@ ObjectStorage.prototype = {
             self._save( 'session' );
         });
     },
-    // на случай, если нужно удалить таймаут (clearTimeout( storage.timeoutId ))
     timeoutId: null,
     local: {},
     session: {}
