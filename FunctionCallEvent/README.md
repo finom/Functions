@@ -1,5 +1,5 @@
 # Function Call Event
-This tiny method helps to catch number of calls, result, arguments and another information before, after, on sucess and on error call.
+This tiny method helps to catch result, number of calls, arguments and another information before, after, on sucess and on error call. It can be used for loggers and another things.
 
 ## How to use
 You have to redefine target function like this:
@@ -39,7 +39,7 @@ somefunction = Function.addCallListener( somefunction, {
 [Check it](http://jsfiddle.net/SGhzd/10/)
 
 ## Why is it needed?
-Sometimes libs don't contain some functionality that you need. With Function.addCallListener you can add additional behavior without making changes to lib Javascript file.
+Sometimes libs don't contain some functionality that you need. With Function.addCallListener you can add additional behavior to external functions without making changes to Javascript file.
 
 For example Twitter Bootstrap Typeahead plugin doesn't include any event that runs before and after autocomplete list is shown. And you should make a shitcode to handle event when user chooses one item from the list.
 
