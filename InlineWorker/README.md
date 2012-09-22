@@ -6,11 +6,11 @@ In addition InlineWorker js file contains fallback for old browsers that don't s
 ## Using
 ``` Javascript
 var worker = InlineWorker( function( e ){ 
-	postMessage('msg from worker, ' + e.data);
+	postMessage( 'msg from worker, ' + e.data );
 });
 
-worker.onmessage = function(e) {
-	alert(e.data);
+worker.onmessage = function( e ) {
+	alert( e.data );
 }
 
 worker.postMessage( 'msg from window' );
@@ -19,8 +19,10 @@ worker.postMessage( 'msg from window' );
 In addition you can put second argument to InlineWorker function that uses as onmessage callback (you don't need initiate variable):
 ``` Javascript
 InlineWorker( function( e ) {
-	postMessage('msg from worker2, ' + e.data);
-}, function(e) {
-	alert(e.data);
+	postMessage( 'msg from worker2, ' + e.data );
+}, function( e ) {
+	alert( e.data );
 }).postMessage( 'msg from window2' );
 ```
+
+[Try it](http://jsfiddle.net/sYqUb/)
