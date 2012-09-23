@@ -25,6 +25,8 @@ Class3 = Class( Class2, function Class3() {
 c3 = new C3;
 console.log( c3 instanceof c1, c3 instanceof c2, c3 instanceof c3); // true true true
 ```
+
+[Try it](http://jsfiddle.net/HQX2V/2/)
 ## Class-mi.js
 This file contains class function that implements multiple inheritance (yes yes, one class can inherit few parents). The syntax is the same in general, but you can pass an array of another classes as first argument:
 ```Javascript
@@ -45,6 +47,7 @@ But:
 console.log( instanceOf( mc, Class1 ), instanceOf( mc, Class2 ), instanceOf( mc, Class3 ), instanceOf( mc, Class4 ) ); 
 // true true true true
 ```
+(Try it)[http://jsfiddle.net/HQX2V/1/]
 
 ———————————————-
 

@@ -1,5 +1,4 @@
 "use strict";
-// http://jsfiddle.net/HQX2V/2/
 window.inherits = function( Child, Parent ) {
 	var prototype = Child.prototype,
 		F = function() {};
