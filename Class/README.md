@@ -47,7 +47,7 @@ But:
 console.log( instanceOf( mc, Class1 ), instanceOf( mc, Class2 ), instanceOf( mc, Class3 ), instanceOf( mc, Class4 ) ); 
 // true true true true
 ```
-(Try it)[http://jsfiddle.net/HQX2V/1/]
+[Try it](http://jsfiddle.net/HQX2V/1/)
 
 ———————————————-
 
