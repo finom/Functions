@@ -3,16 +3,16 @@ Javascript is asynchronous language, and sometimes your code becomes spaghetti c
 ## How to use
 ``` Javascript
 wait(function(next){
-    sodomethingAsync1(next);
+    dosomethingAsync1(next);
 }).wait(function(next, a, b){
-    sodomethingAsync2(next);
+    dosomethingAsync2(next);
 }).wait(function(next, c, d){
-	sodomethingAsync3(next);
+	dosomethingAsync3(next);
 });
 ```
 a,b,c,d are custom arguments that passed into callback function:
 ``` Javascript
-sodomethingAsync1 = function( callback ) {
+dosomethingAsync1 = function( callback ) {
 	var a, b;
 	//...
 	callback( a, b );
