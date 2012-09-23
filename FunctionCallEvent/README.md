@@ -36,7 +36,7 @@ somefunction = Function.addCallListener( somefunction, {
 }
 ```
 
-[Check it](http://jsfiddle.net/SGhzd/10/)
+[Check it](http://jsfiddle.net/SGhzd/12/)
 
 ## Why is it needed?
 Sometimes libs don't contain some functionality that you need. With Function.addCallListener you can add additional behavior to external functions without making changes to Javascript file or copying the function to change it.
