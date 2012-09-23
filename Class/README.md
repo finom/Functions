@@ -37,11 +37,13 @@ MyClass = Class([Class1, Class2, Class3, Array], function MyClass() {
 MyClass instancess will have all methods from Class1, Class2, Class3 and Array and implement Array behavior. To check is instance inherits some Class, you can use instanceOf function (instanceOf( instance, SomeClass )) because classic instanceof statement will return true only for the last class from parents array:
 ```Javascript
 mc = new MyClass;
-console.log( mc instanceof Class1, mc instanceof Class2, mc instanceof Class3, mc instanceof Array ); // false false false true
+console.log( mc instanceof Class1, mc instanceof Class2, mc instanceof Class3, mc instanceof Array ); 
+// false false false true
 ```
 But:
 ```Javascript
-console.log( instanceOf( mc, Class1 ), instanceOf( mc, Class2 ), instanceOf( mc, Class3 ), instanceOf( mc, Class4 ) ); // true true true true
+console.log( instanceOf( mc, Class1 ), instanceOf( mc, Class2 ), instanceOf( mc, Class3 ), instanceOf( mc, Class4 ) ); 
+// true true true true
 ```
 
 ———————————————-
@@ -52,7 +54,7 @@ Child = Class( Parent, function Child() {
 	Parent.apply( this, arguments )
 }, {
 	method: function() {
-		Parent.apply( this, arguments )
+		Parent.prototype.method.apply( this, arguments )
 	}
 });
 ```
