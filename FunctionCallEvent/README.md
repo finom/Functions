@@ -43,7 +43,7 @@ somefunction = somefunction.addCallListener( 'after', function(props) {} );
 }
 ```
 
-[Check it](http://jsfiddle.net/SGhzd/12/)
+[Check it](http://jsfiddle.net/SGhzd/14/)
 
 ## Why is it needed?
 Sometimes libs don't contain some functionality that you need. With f.addCallListener method you can add additional behavior to external functions without making changes to Javascript file or copying the function to change it.
