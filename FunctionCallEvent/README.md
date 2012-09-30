@@ -4,7 +4,7 @@ This tiny method helps to catch result, number of calls, arguments and another i
 ## How to use
 You have to redefine target function like this:
 ```JavaScript
-somefunction = Function.addCallListener( somefunction, {
+somefunction = somefunction.addCallListener({
     before: function(props) {
         // this handler calls before function call
     },
@@ -22,12 +22,19 @@ somefunction = Function.addCallListener( somefunction, {
     }
 });
 ```
+Or use short notation
+```JavaScript
+somefunction = somefunction.addCallListener( 'before', function(props) {} );
+somefunction = somefunction.addCallListener( 'after', function(props) {} );
+//...
+```
 'props' argument is an object that contains (values is example):
 ```JavaScript
 {
 	args: [], // an array of arguments that has been passed to the function,
 	result: 'someresult', // value that returned,
-	self: Window, // context where function has been executed,
+	target: function() {}, // function that has been decorated by addCallListener method
+	context: Window, // context where function has been executed,
 	status: 'success', // 'success' or 'error',
 	name: 'somefunction', // function name, not cross browser feature,
 	errorNumber: 1, // number of calls that failed with exception,
@@ -39,27 +46,28 @@ somefunction = Function.addCallListener( somefunction, {
 [Check it](http://jsfiddle.net/SGhzd/12/)
 
 ## Why is it needed?
-Sometimes libs don't contain some functionality that you need. With Function.addCallListener you can add additional behavior to external functions without making changes to Javascript file or copying the function to change it.
+Sometimes libs don't contain some functionality that you need. With f.addCallListener method you can add additional behavior to external functions without making changes to Javascript file or copying the function to change it.
 
 For example Twitter Bootstrap Typeahead plugin doesn't include any event that runs before and after autocomplete list is shown. And you should make a shitcode to handle event when user chooses one item from the list.
 
 The solution is like:
 ```JavaScript
 var typeaheadPrototype = $.fn.typeahead.Constructor.prototype;
-typeaheadPrototype.show = Function.addCallListener( typeaheadPrototype.show, {
+
+typeaheadPrototype.show = typeaheadPrototype.show.addCallListener({
 	before: function( props ) {
-		props.self.$element.trigger({ type: 'typeaheadbeforeshow', typeahead: props.self });
+		props.self.$element.trigger({ type: 'typeaheadbeforeshow' });
 	},
 	after: function( props ) {
-		props.self.$element.trigger({ type: 'typeaheadshow', typeahead: props.self });
+		props.self.$element.trigger({ type: 'typeaheadshow' });
 	}
 });
 	
-typeaheadPrototype.select = Function.addCallListener( typeaheadPrototype.select, {
-	after: function( props ) {
-		props.self.$element.trigger({ type: 'typeaheadselect', typeahead: props.self });
-	}
+typeaheadPrototype.select = typeaheadPrototype.select.addCallListener( 'after', function( props ) {
+	props.self.$element.trigger({ type: 'typeaheadselect' });
 });
 
-$( 'input.typeahead' ).on( 'typeaheadbeforeshow', somehandler );
+$( 'input.typeahead' ).on( 'typeaheadbeforeshow', function() {
+	alert( 'beforeshow' );
+});
 ```
