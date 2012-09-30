@@ -56,15 +56,15 @@ var typeaheadPrototype = $.fn.typeahead.Constructor.prototype;
 
 typeaheadPrototype.show = typeaheadPrototype.show.addCallListener({
 	before: function( props ) {
-		props.self.$element.trigger({ type: 'typeaheadbeforeshow' });
+		props.context.$element.trigger({ type: 'typeaheadbeforeshow' });
 	},
 	after: function( props ) {
-		props.self.$element.trigger({ type: 'typeaheadshow' });
+		props.context.$element.trigger({ type: 'typeaheadshow' });
 	}
 });
 	
 typeaheadPrototype.select = typeaheadPrototype.select.addCallListener( 'after', function( props ) {
-	props.self.$element.trigger({ type: 'typeaheadselect' });
+	props.context.$element.trigger({ type: 'typeaheadselect' });
 });
 
 $( 'input.typeahead' ).on( 'typeaheadbeforeshow', function() {
