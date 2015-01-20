@@ -1,6 +1,8 @@
 Functions
 =========
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/finom/Functions?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This repository contains few functions that help in deciding of certain problems.
 * [Class](Functions/tree/master/Class) contains two functions that represents simplest class implementation. First is classical inheritance second is multiple inheritance (one class can has multiple parents).
 * [FunctionCallEvent](Functions/tree/master/FunctionCallEvent) is Function method that can be used to decorate another functions (eg call your function before another function is called).
