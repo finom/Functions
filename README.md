@@ -1,7 +1,5 @@
-Functions
+Functions [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 =========
-
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/finom/Functions?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This repository contains few functions that help in deciding of certain problems.
 * [Class](Functions/tree/master/Class) contains two functions that represents simplest class implementation. First is classical inheritance second is multiple inheritance (one class can has multiple parents).
